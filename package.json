@@ -18,8 +18,10 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-camera": "^2.2.2",
     "react-native-camera-kit": "^7.3.7",
+    "react-native-elements": "^1.1.0",
     "react-native-firebase": "^5.3.1",
     "react-native-progress": "^3.6.0",
+    "react-native-snap-carousel": "^3.7.5",
     "react-navigation": "^3.0.9"
   },
   "devDependencies": {

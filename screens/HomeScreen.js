@@ -9,8 +9,9 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-
+import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { MonoText } from '../components/StyledText';
+
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -35,11 +36,107 @@ export default class HomeScreen extends React.Component {
             </Text>
           </View>
 
-          <View style={styles.subcontentContainer}>
-            <Text style={styles.getStartedText}>
-              Place information on last recorded data and steps to conduct analysis here.
-            </Text>
-          </View>
+          <ScrollView 
+            horizontal= {true}
+            decelerationRate={-0.6}
+            snapToInterval={350} //your element width
+            snapToAlignment={"right"}
+            showsHorizontalScrollIndicator={false}
+            marginLeft={5}
+            marginRight={5}
+            marginTop={-15}
+            height={500}
+            >
+
+            
+            <Card
+              title={<Text style={{fontSize: 28, fontWeight: '100', marginVertical: 15, marginHorizontal: 10}}>Needham, MA</Text>}
+              width={320}
+              height={460}
+
+              containerStyle={{ 
+                borderRadius: 30,
+                borderColor: "#fff",
+                backgroundColor: '#fff',
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.8,
+                shadowRadius: 2,
+                elevation: 5,
+              }}
+            >
+            <View style={{marginHorizontal:10, fontSize:18, flex: 2}}>
+              <Text style={{marginBottom: 10}}>
+                The idea with React Native Elements is more about component structure than actual design.
+              </Text>
+
+              <View style={styles.down}>
+                <Button
+                  backgroundColor='#03A9F4'
+                  buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+                  title='See more' />
+              </View>
+            </View>
+
+            </Card>
+
+            <Card
+              title='Needham, MA'
+              fontSize={80}
+              image={require('../assets/images/trickle.png')}
+              width={320}
+              height={460}
+
+              containerStyle={{ 
+                borderRadius: 30,
+                borderColor: "#fff",
+                backgroundColor: '#fff',
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.8,
+                shadowRadius: 2,
+                elevation: 5,
+              }}
+            >
+              <Text style={{marginBottom: 10}}>
+                The idea with React Native Elements is more about component structure than actual design.
+              </Text>
+              <Button
+                icon={<Icon name='code' color='#ffffff' />}
+                backgroundColor='#03A9F4'
+                buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+                title='VIEW NOW' />
+            </Card>
+
+            <Card
+              title='Needham, MA'
+              image={require('../assets/images/trickle.png')}
+              width={320}
+              height={460}
+
+              containerStyle={{ 
+                borderRadius: 30,
+                borderColor: "#fff",
+                backgroundColor: '#fff',
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.8,
+                shadowRadius: 2,
+                elevation: 5,
+              }}
+            >
+              <Text style={{marginBottom: 10}}>
+                The idea with React Native Elements is more about component structure than actual design.
+              </Text>
+              <Button
+                icon={<Icon name='code' color='#ffffff' />}
+                backgroundColor='#03A9F4'
+                buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+                title='VIEW NOW' />
+            </Card>
+          
+          </ScrollView>
+          
 
         </ScrollView>
 
@@ -86,6 +183,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  down: {
+    flex: 1,
+    justifyContent: 'flex-end',
   },
   developmentModeText: {
     marginBottom: 20,
